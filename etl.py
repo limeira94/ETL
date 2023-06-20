@@ -16,7 +16,7 @@ class ExcelToOracleETL:
     @staticmethod
     def connect_oracle():
         try:
-            conn = cx_Oracle.connect(user="system", password="1234", dsn="*****", encoding="UTF-8")
+            conn = cx_Oracle.connect(user="***", password="****", dsn="*****", encoding="UTF-8")
             return conn
         except Exception as e:
             raise ConnectionError(f"Não foi possível conectar ao banco de dados - {e}")

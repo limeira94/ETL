@@ -6,9 +6,10 @@ from etl import ExcelToOracleETL
 def etl():
     return ExcelToOracleETL
 
-def test_load_excel(etl):
+def test_load_excel():
     file_path = "./dados/dados_mercado.xlsx"
-    result = etl.load_excel(file_path)
+    etl = ExcelToOracleETL(file_path)
+    result = etl.load_excel()
     assert result is not None
 
 def test_connection(etl):
@@ -16,8 +17,10 @@ def test_connection(etl):
     assert result
 
 def test_insert_data_oracle():
-    data = {'coluna1': [1, 2, 3], 'coluna2': ['A', 'B', 'C']}
+    data = {'codigo': ['A', 'B', 'C'], 'quantidade': [1, 2, 3]}
     df = pd.DataFrame(data)
-
+    etl = ExcelToOracleETL(df)
     result = etl.insert_data(df)
     assert result is True
+
+

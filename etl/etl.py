@@ -32,7 +32,7 @@ class ExcelToOracleETL:
         except Exception as e:
             raise ConnectionError(
                 f'Não foi possível conectar ao banco de dados - {e}'
-            )
+            ) from e
 
     def insert_data(self, df):
         try:

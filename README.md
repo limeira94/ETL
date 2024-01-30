@@ -1,3 +1,4 @@
+**Author: Felipe Limeira da Silva**
 # ETL Carga de Dados Excel
 
 Este é um script Python para extrair dados de um arquivo Excel e carregá-los em um banco de dados Oracle.
